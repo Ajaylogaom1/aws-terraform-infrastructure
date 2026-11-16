@@ -1,0 +1,19 @@
+
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.*
+*.tfvars
+
+# Secrets and private keys
+*.pem
+*.key
+.env
+
+# Keep dependency lock file
+# .terraform.lock.hcl should be committed
+
+.terraform/
+terraform.tfvars
+terraform.tfstate.backup
+terraform.tfstate
