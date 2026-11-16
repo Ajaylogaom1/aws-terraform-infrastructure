@@ -320,6 +320,13 @@ Through this project, I gained practical experience with:
 
 ---
 
+## AWS Infrastructure Architecture
+
+The following diagram illustrates the AWS infrastructure
+provisioned using Terraform.
+
+![AWS Architecture Diagram](architecture_image)
+
 ## 👨‍💻 Author
 
 **Ajay**
