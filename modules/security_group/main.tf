@@ -2,7 +2,7 @@ resource "aws_security_group" "ec2-sg" {
   name        = "${var.project_name}-ec2-sg"
   description = "Allow TLS inbound traffic and all outbound traffic"
   vpc_id      = var.vpc_id
-  
+
   ingress {
     description = "TLS from VPC"
     from_port   = 443
@@ -16,8 +16,15 @@ resource "aws_security_group" "ec2-sg" {
     from_port   = 22
     to_port     = 22
     protocol    = "tcp"
-    cidr_blocks = [var.ssh_allowed_cidr]
+    cidr_blocks = ["0.0.0.0/0"]
 
+  }
+  ingress {
+    description = "nginx"
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
   }
 
   egress {
@@ -28,7 +35,7 @@ resource "aws_security_group" "ec2-sg" {
 
   }
 
-   tags = {
+  tags = {
     Name = "${var.project_name}-ec2-sg"
   }
 }

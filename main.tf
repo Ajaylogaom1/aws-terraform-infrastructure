@@ -1,12 +1,12 @@
 module "vpc" {
   source = "./modules/vpc"
 
-  project_name       = var.project_name
-  vpc_cidr_block     = var.vpc_cidr_block
-  public_subnet_cidr_block  = var.public_subnet_cidr
-  private_subnet_1_cidr = var.private_subnet_1_cidr
-  private_subnet_2_cidr = var.private_subnet_2_cidr
-  aws_region         = var.aws_region
+  project_name             = var.project_name
+  vpc_cidr_block           = var.vpc_cidr_block
+  public_subnet_cidr_block = var.public_subnet_cidr
+  private_subnet_1_cidr    = var.private_subnet_1_cidr
+  private_subnet_2_cidr    = var.private_subnet_2_cidr
+  aws_region               = var.aws_region
 }
 
 #security group
@@ -15,7 +15,7 @@ module "security_group" {
 
   project_name = var.project_name
   vpc_id       = module.vpc.vpc_id
-  ssh_allowed_cidr    = var.ssh_allowed_cidr
+
 }
 
 #ec2 instance
